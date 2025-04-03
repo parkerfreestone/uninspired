@@ -65,4 +65,30 @@ window.addEventListener("DOMContentLoaded", () => {
   initThemeSelector();
   const saved = localStorage.getItem(STORAGE_KEY) || DEFAULT_TITLE;
   applyTitle(saved);
+
+  const tabButtons = document.querySelectorAll(".tab-toggle");
+  const tabSections = document.querySelectorAll(".tab-content");
+
+  tabButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const selectedTab = button.dataset.tab;
+
+      tabSections.forEach((section) => {
+        section.hidden = true;
+      });
+
+      const activeSection = document.getElementById(`tab-${selectedTab}`);
+      if (activeSection) activeSection.hidden = false;
+
+      tabButtons.forEach((btn) => {
+        btn.classList.remove("bg-primary");
+        btn.classList.add("bg-ghost");
+      });
+
+      button.classList.remove("bg-ghost");
+      button.classList.add("bg-primary");
+    });
+  });
+
+  document.querySelector('[data-tab="about"]')?.click();
 });

@@ -78,7 +78,8 @@
 
           <!-- Nav Items -->
           <div class="main-nav-items">
-            <div class="nav-item bg-primary"># about</div>
+            <button class="nav-item bg-primary tab-toggle" data-tab="about"># about</button>
+            <button class="nav-item bg-ghost tab-toggle" data-tab="logbook"># logbook</button>
             <div class="nav-item disabled" aria-disabled="true"># poetry</div>
             <div class="nav-item disabled" aria-disabled="true"># anime</div>
             <a
@@ -93,34 +94,63 @@
 
         <!-- Main Content -->
         <section class="content" aria-labelledby="about-heading">
-          <h3 class="content-heading" id="about-heading"># about</h3>
-          <p>
-            hello, this is my 'portfolio' site, decided to keep it very simple
-            from here on out!
-            <i class="fa-solid fa-face-smile" aria-hidden="true"></i>
-          </p>
-          <p>
-            things I enjoy: shoegaze, coffee, art, corduroy (had to look up how
-            to spell that), my gf, my corg -- luna bear, alfredo, the video
-            games that come out and are popular for a week (R.E.P.O., Schedule
-            1).
-          </p>
-          <p>
-            things I most certainly <span class="danger">DONT</span> enjoy:
-            getting up in the morning, the web dev space rn, finishing projects
-            (satire).
-          </p>
-          <p>
-            <s
+          <!-- About Tab -->
+          <section id="tab-about" class="tab-content">
+            <h3 class="content-heading" id="about-heading"># about</h3>
+            <p>
+              hello, this is my 'portfolio' site, decided to keep it very simple
+              from here on out!
+              <i class="fa-solid fa-face-smile" aria-hidden="true"></i>
+            </p>
+            <p>
+              things I enjoy: shoegaze, coffee, art, corduroy (had to look up how
+              to spell that), my gf, my corg -- luna bear, alfredo, the video
+              games that come out and are popular for a week (R.E.P.O., Schedule
+              1).
+            </p>
+            <p>
+              things I most certainly <span class="danger">DONT</span> enjoy:
+              getting up in the morning, the web dev space rn, finishing projects
+              (satire).
+            </p>
+            <p>
+              <s
               >i decided not to make any of this interactive, we will see if
               that changes in the future</s
-            >
-            but sorta does play nicely into the whole uninspired thing. Also
-            quick mention that the markdown for this site is pretty bad but i'll
-            keep it public so feel free to criticize me publicly.
-          </p>
-          <p>be kind to people.</p>
-          <p>fuck tr*mp & elon musk <i class="fa-solid fa-heart" aria-hidden="true"></i></p>
+              >
+              but sorta does play nicely into the whole uninspired thing. Also
+              quick mention that the markdown for this site is pretty bad but i'll
+              keep it public so feel free to criticize me publicly.
+            </p>
+            <p>be kind to people.</p>
+            <p>fuck tr*mp & elon musk <i class="fa-solid fa-heart" aria-hidden="true"></i></p>
+          </section>
+
+          <!-- Logbook Tab -->
+        <section id="tab-logbook" class="tab-content">
+          <h3 class="content-heading" id="about-heading"># logbook</h3>
+          <p>ripped this idea straight from
+             <a target="_blank" rel="noopener noreferrer" href="https://hatecomputers.club/guestbook">hatecomputers.club</a>
+              -- completely unoriginal. please be civil!</p>
+
+          <form class="logbook-form" id="logbook-form">
+            <input type="text" placeholder="name" id="logbook-name" required/>
+
+            <!-- Honeypot, not sure if this is even good practice anymore -->
+            <input type="text" name="nickname" id="logbook-nickname" autocomplete="off" tabindex="-1" hidden />
+
+            <textarea maxlength="55" placeholder="message" id="logbook-message" required></textarea>
+
+            <button class="button bg-dark" type="submit"><span class="bg-dark">Sign Logbook</span> <i class="fa-solid fa-pencil bg-dark" aria-hidden="true"></i></button>
+          </form>
+
+          <hr class="seperator" />
+
+          <section class="logbook-entries" id="logbook-entries">
+            <h2 class="content-heading">## logbook entries</h2>
+            
+          </section>
+        </section>
         </div>
       </div>
     </main>
@@ -131,6 +161,8 @@
       <i class="fa-solid fa-heart" aria-hidden="true"></i>
     </p>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="index.js"></script>
+    <script src="logbook.js"></script>
   </body>
 </html>
