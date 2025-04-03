@@ -24,13 +24,16 @@
           <button class="circle-button bg-light">&#8203;</button>
         </div>
         <div class="center-header-items">
-          <h1 class="header-title">uninspired.xyz</h1>
+          <button class="header-button" onclick="getRandomTitle()">
+            <i class="fa-solid fa-rotate-right hidden-icon"></i>
+            <span class="title"> uninspired.xyz </span>
+          </button>
         </div>
       </div>
       <div class="body">
         <div class="navigation">
           <div class="say-something bg-light">
-            <select>
+            <select disabled>
               <option value="1">Pillar</option>
             </select>
             <div class="square-button bg-dark">
@@ -47,7 +50,13 @@
             <div class="nav-item bg-primary"># about</div>
             <div class="nav-item disabled"># poetry</div>
             <div class="nav-item disabled"># anime</div>
-            <div class="nav-item bg-ghost"># music</div>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://open.spotify.com/playlist/60lXUeUrlgxCk2Boz5mD80?si=4c5fe278e354416d"
+              class="nav-item bg-ghost"
+              ># music</a
+            >
           </div>
         </div>
 
@@ -70,10 +79,13 @@
             (satire).
           </p>
           <p>
-            i decided not to make any of this interactive, we will see if that
-            changes in the future but sorta does play nicely into the whole
-            uninspired thing. Also quick mention that the markdown for this site
-            is pretty bad but i'll keep it public.
+            <s
+              >i decided not to make any of this interactive, we will see if
+              that changes in the future</s
+            >
+            but sorta does play nicely into the whole uninspired thing. Also
+            quick mention that the markdown for this site is pretty bad but i'll
+            keep it public so feel free to criticize me publicly.
           </p>
           <p>be kind to people.</p>
           <p>fuck tr*mp & elon musk <i class="fa-solid fa-heart"></i></p>
@@ -85,5 +97,7 @@
       hi sorry you need a larger screen to view
       <i class="fa-solid fa-heart"></i>
     </p>
+
+    <script src="index.js"></script>
   </body>
 </html>
