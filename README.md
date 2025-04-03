@@ -1,3 +1,9 @@
-# uninspired.dev
+# uninspired.xyz
 
-this is my new portfolio site, written in html, and css. i may or may not be adding javascript to it at some point but i sorta like how it turned out :)
+personal site, and logbook -- built with html/css, js, and supabase
+
+## inspired by
+
+- ([hatecomputersclub]https://hatecomputers.club)
+
+- old personal pages, minimal UX, weird corners of the internet, macos too i guess
