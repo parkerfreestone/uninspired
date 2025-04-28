@@ -23,6 +23,7 @@ form.addEventListener("submit", async (e) => {
 
   if (lastPostTime && now - lastPostTime < RATE_LIMIT_MS) {
     alert("Slow down! Try again in a bit.");
+    return;
   }
 
   //   Catch Honeypot
