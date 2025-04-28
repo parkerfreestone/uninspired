@@ -47,9 +47,15 @@ body {
   font-family: "Satoshi", sans-serif;
 }
 
+button {
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+}
+
 .container {
-  width: 60%;
-  height: 60%;
+  width: 80%;
+  height: 80%;
 
   max-height: 90vh;
 
@@ -251,6 +257,10 @@ body {
   box-shadow: 4px 4px 0px var(--color-border);
 }
 
+.say-something:hover {
+  filter: brightness(95%);
+}
+
 select {
   width: 100%;
   font-weight: 800;
@@ -289,7 +299,8 @@ p {
 
 .content-heading {
   font-size: 2rem;
-  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  /* border-bottom: 3px solid var(--color-border); */
 }
 
 .danger {
@@ -379,26 +390,6 @@ textarea {
 textarea::placeholder {
   color: var(--color-text);
 }
-/* 
-@media (max-width: 1400px) {
-  .container {
-    display: none;
-  }
-
-  .body {
-    flex: 1;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
-  }
-
-  .mobile-user {
-    display: inline-block;
-  }
-} */
 
 .sr-only {
   position: absolute;
@@ -466,13 +457,13 @@ textarea::placeholder {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    overflow-y: auto;
     gap: 1rem;
   }
 
   .content {
     width: 100%;
     height: auto;
-    overflow-y: visible;
   }
 
   .nav-item {
@@ -483,7 +474,7 @@ textarea::placeholder {
   }
 
   .header-container {
-    flex-direction: column;
+    justify-content: space-between;
     gap: 10px;
   }
 
