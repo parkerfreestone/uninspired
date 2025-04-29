@@ -408,6 +408,49 @@ textarea::placeholder {
   text-decoration: underline;
 }
 
+.mobile-nav-button {
+  display: none; 
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  width: 100%;
+}
+
+.button-text {
+  font-size: 1.2rem;
+  font-weight: 900;
+  font-family: "Satoshi", sans-serif;;
+}
+
+.mobile-nav-dropdown {
+  position: absolute;
+  top: 1%;
+  left: 50%;
+  width: 95%;
+  background: var(--color-surface);
+  border: 3px solid var(--color-border);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 20px 0;
+
+  transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.mobile-nav-dropdown.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 @media (max-width: 1200px) {
   .container {
     width: 90%;
@@ -455,9 +498,7 @@ textarea::placeholder {
     border-right: none;
     border-bottom: 3px solid var(--color-border);
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    overflow-y: auto;
+    justify-content: space-between;
     gap: 1rem;
   }
 
@@ -490,5 +531,23 @@ textarea::placeholder {
   .button {
     font-size: 0.9rem;
     padding: 10px;
+  }
+
+  .circle-button {
+    width: 15px;
+    height: 15px;
+  }
+
+  .header-button {
+    font-size: 1.5rem;
+  }
+
+  .main-nav-items,
+  .navigation > h2 {
+    display: none;
+  }
+
+  .mobile-nav-button {
+    display: flex;
   }
 }

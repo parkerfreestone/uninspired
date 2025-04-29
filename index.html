@@ -15,7 +15,6 @@
       href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap"
       rel="stylesheet"
     />
-
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -59,7 +58,7 @@
         <div class="navigation" aria-label="Main navigation">
           <!-- Theme Selection -->
           <div class="say-something bg-light">
-            <label for="theme-select" class="sr-only">Theme</label>
+            <label for="theme-select" class="sr-only">theme</label>
             <select id="theme-select" aria-label="Select a theme">
               <option value="">vintage</option>
               <option value="theme-dark">dark</option>
@@ -70,10 +69,29 @@
             </div>
           </div>
 
-            <button class="say-something bg-light">
-              <i class="fa-solid fa-comment" aria-hidden="true"></i>
-               <span> Topics </span>
-            </button>
+          <!-- Mobile Nav Button -->
+          <button class="mobile-nav-button say-something bg-light" id="nav-toggle">
+            <span class="button-text">topics</span>
+            <div class="square-button bg-dark" aria-hidden="true">
+              <i class="fa-solid fa-comment bg-dark"></i>
+            </div>
+          </button>
+
+          <!-- Mobile Dropdown -->
+          <div class="mobile-nav-dropdown" id="mobile-nav-dropdown">
+            <button class="nav-item bg-primary tab-toggle" data-tab="about"># about</button>
+            <button class="nav-item bg-ghost tab-toggle" data-tab="logbook"># logbook</button>
+            <div class="nav-item disabled" aria-disabled="true"># poetry</div>
+            <div class="nav-item disabled" aria-disabled="true"># anime</div>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://open.spotify.com/playlist/60lXUeUrlgxCk2Boz5mD80?si=4c5fe278e354416d"
+              class="nav-item bg-ghost"
+              ># music</a
+            >
+          </div>
+
           <!-- Nav Heading -->
              <h2>
                <i class="fa-solid fa-comment" aria-hidden="true"></i>
@@ -135,7 +153,7 @@
           <h3 class="content-heading" id="about-heading"># logbook</h3>
           <p>ripped this idea straight from
              <a target="_blank" rel="noopener noreferrer" href="https://hatecomputers.club/guestbook">hatecomputers.club</a>
-              -- completely unoriginal. please be civil!</p>
+              -- completely unoriginal. please be civil and no spam please!</p>
 
           <form class="logbook-form" id="logbook-form">
             <input type="text" placeholder="name" id="logbook-name" required/>
