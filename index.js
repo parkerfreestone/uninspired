@@ -109,8 +109,13 @@ window.addEventListener("DOMContentLoaded", () => {
 
       button.classList.remove("bg-ghost");
       button.classList.add("bg-primary");
+
+      if (selectedTab === "logbook") {
+        fetchLogbookEntries();
+      }
     });
   });
 
-  document.querySelector('[data-tab="about"]')?.click();
+  const defaultTab = document.querySelector('[data-tab="about"]');
+  defaultTab?.click();
 });
