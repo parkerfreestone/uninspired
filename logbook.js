@@ -66,25 +66,42 @@ async function fetchLogbookEntries() {
     return;
   }
 
-  const entries = data.map((entry) => {
-    return `
-        <div class="logbook-entry">
-            <h4>${entry?.name}</h4>
-            <p>${entry?.message}</p>
-            <p class="logbook-footer">
-                <span>
-                ${new Date(entry?.created_at).toLocaleDateString()}
-                </span>
-                <i class="fa-solid fa-pencil" aria-hidden="true"></i>
-            </p>
-        </div>
-      `;
-  });
+  entriesContainer.innerHTML = "";
 
-  entriesContainer.innerHTML = `
-      <h2 class="content-heading">## logbook entries</h2>
-      ${entries.join("")}
-    `;
+  const heading = document.createElement("h2");
+  heading.className = "content-heading";
+  heading.textContent = "## logbook entries";
+  entriesContainer.appendChild(heading);
+
+  data.forEach((entry) => {
+    const entryDiv = document.createElement("div");
+    entryDiv.className = "logbook-entry";
+
+    const nameEl = document.createElement("h4");
+    nameEl.textContent = entry?.name || "anon";
+
+    const msgEl = document.createElement("p");
+    msgEl.textContent = entry?.message || "";
+
+    const footer = document.createElement("p");
+    footer.className = "logbook-footer";
+
+    const dateSpan = document.createElement("span");
+    dateSpan.textContent = new Date(entry?.created_at).toLocaleDateString();
+
+    const icon = document.createElement("i");
+    icon.className = "fa-solid fa-pencil";
+    icon.setAttribute("aria-hidden", "true");
+
+    footer.appendChild(dateSpan);
+    footer.appendChild(icon);
+
+    entryDiv.appendChild(nameEl);
+    entryDiv.appendChild(msgEl);
+    entryDiv.appendChild(footer);
+
+    entriesContainer.appendChild(entryDiv);
+  });
 }
 
 document
